@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Container, Card, CardContent, makeStyles, Grid} from '@material-ui/core';
-import { QrReader } from 'react-qr-reader';
+import QrReader from 'react-qr-reader'
 import Swal from 'sweetalert2'
 
 
@@ -37,7 +37,7 @@ function App() {
           title: "สแกนสำเร็จ",
           icon: "success"
         });
-      console.log(result)
+      console.log(result?.text)
         setScanResultWebCam(result);
         setTimeout(() => {
         setIsLoading(true)
