@@ -95,7 +95,7 @@ function App() {
                          style={{width: '100%'}}
                          onError={handleErrorWebCam}
                          onScan={handleScanWebCam} 
-                         constraints={ {facingMode: 'environment'} }
+                        //  constraints={ {facingMode: 'environment'} }
                          />}
     </div>
                         
