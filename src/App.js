@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {Container, Card, CardContent, makeStyles, Grid} from '@material-ui/core';
 
 import QrReader from 'react-qr-reader';
@@ -129,6 +129,7 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: 50,
       marginTop: 10,
       marginBottom: 10
+
     } 
 
 }));
