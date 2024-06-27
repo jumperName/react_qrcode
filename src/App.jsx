@@ -94,7 +94,9 @@ function App() {
       { openQr && <QrReader  delay={200}
                          style={{width: '100%'}}
                          onError={handleErrorWebCam}
-                         onScan={handleScanWebCam} />}
+                         onScan={handleScanWebCam} 
+                         constraints={ {facingMode: 'environment'} }
+                         />}
     </div>
                         
        <div className={classes.activeStyle}  >  <span style={{color: '#2B2B2B',fontWeight: 'bold'}}>Qr Code_Wristband :</span>{''} {scanResultWebCam.substring(0,18)}</div>
