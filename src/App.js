@@ -45,8 +45,7 @@ function App() {
       }, 6000);
       }
   
-      if(isLoading === true){
-        
+      if(isLoading === true){     
       console.log("scanResultWebCam2",scanResultWebCam2)
       setScanResultWebCam2(result);
       setIsLoading(false)
@@ -54,17 +53,17 @@ function App() {
 
       if(scanResultWebCam !=='' && scanResultWebCam2 !=='' ){
       if(checksuccess === true){
-          if(scanResultWebCam === scanResultWebCam2){
+          if(scanResultWebCam.substring(1,32) === scanResultWebCam2.substring(1,32)){
             Swal.fire({
-              title: "ข้อมูลตรงกัน",
+              title: "ข้อมูล HN กับ AN ตรงกัน",
               icon: "success"
             });
             setOpenQr(!openQr)
             setCheckSuccess(false)
           }
-          if(scanResultWebCam !== scanResultWebCam2){
+          if(scanResultWebCam.substring(1,32) !== scanResultWebCam2.substring(1,32)){
             Swal.fire({
-              title: "ข้อมูลไม่ตรงกัน",
+              title: "ข้อมูล HN กับ AN ไม่ตรงกัน",
               icon: "success"
             });
             setOpenQr(!openQr)
@@ -98,9 +97,10 @@ function App() {
                          onError={handleErrorWebCam}
                          onScan={handleScanWebCam} />}
     </div>
-                         <h3 >barcode 1: {scanResultWebCam}</h3>
-                         <h3>barcode 2: {scanResultWebCam2}</h3>
-                       
+                        
+       <div className={classes.activeStyle}  >  <span style={{color: '#2B2B2B',fontWeight: 'bold'}}>Qr Code_Wristband :</span>{''} {scanResultWebCam.substring(0,18)}</div>
+       <div className={classes.activeStyle}  >  <span style={{color: '#2B2B2B',fontWeight: 'bold'}}>Qr Code_ถุงเลือด :</span>{''} {scanResultWebCam2.substring(34,38)}</div>
+
                       </Grid>
                   </Grid>
               </CardContent>
@@ -130,7 +130,7 @@ const useStyles = makeStyles((theme) => ({
       marginTop: 10,
       marginBottom: 10
 
-    } 
-
+    } ,
+    activeStyle: { color:'green', fontWeight: 'bold'}
 }));
 export default App;
