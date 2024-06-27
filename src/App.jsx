@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Container, Card, CardContent, makeStyles, Grid} from '@material-ui/core';
-import QrReader from 'react-qr-reader';
+import { QrReader } from 'react-qr-reader';
 import Swal from 'sweetalert2'
 
 
